@@ -1,6 +1,7 @@
 .dialog-container {
+  width: calc(100% - 16px);
   .close-button-row {
-    width: 100%;
+    width: calc(100% + 14px);
     .close-button {
       border: 3px solid #492613;
       width: 55px;
@@ -13,13 +14,14 @@
     margin-top: -40px;
     background: white;
     border-radius: 30px;
-    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
     .title-text {
       font-size: 36px;
       color: #492613;
       font-family: Helvetica-Neue-Bold;
       font-weight: 900;
       margin-bottom: 10px;
+      text-align: center;
+      min-width: 600px;
     }
     .subtitle-text {
       font-size: 24px;
@@ -27,7 +29,7 @@
       color: #492613;
       font-family: Helvetica-Neue-Bold;
       font-weight: 900;
-      padding: 0 100px;
+      text-align: center;
     }
   }
 }
@@ -37,6 +39,16 @@
     .text-container {
       .subtitle-text {
         padding: 0 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .dialog-container {
+    .text-container {
+      .title-text {
+        min-width: unset;
       }
     }
   }
