@@ -1,0 +1,77 @@
+.dialog-container {
+  background: white;
+  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  .title-container {
+    padding: 0 5% 0 5%;
+    p {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #492613;
+      font-family: Helvetica-Neue-Bold;
+      font-weight: 900;
+    }
+  }
+  .age-form {
+    max-width: 620px;
+    width: 100%;
+    .fields-container {
+      padding-bottom: 20px;
+      padding-left: 5%;
+      padding-right: 5%;
+      flex-wrap: wrap;
+      .mat-form-field {
+        width: 15%;
+        min-width: 100px;
+        margin-right: 10px;
+        &:last-of-type {
+          width: 20%;
+          min-width: 150px;
+        }
+      }
+      .mat-button {
+        background: #e6e7e8;
+        color: rgba(0,0,0,.54);
+        border-radius: 10px;
+        height: 55px;
+        width: 25%;
+        min-width: 175px;
+        padding-top: 6px;
+      }
+      .valid-button {
+        background: #ffd200;
+        color: #492613;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 895px) {
+  .dialog-container {
+    .title-container {
+      padding-left: 10%;
+      p {
+        font-size: 26px;
+      }
+    }
+    .age-form {
+      .fields-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10%;
+        padding-right: 0;
+        .mat-form-field {
+          width: 90%;
+          margin-right: 0;
+          &:last-of-type {
+            width: 90%;
+          }
+        }
+        .mat-button {
+          width: 90%;
+          min-width: 150px;
+        }
+      }
+    }
+  }
+}

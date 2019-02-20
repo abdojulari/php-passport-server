@@ -1,0 +1,33 @@
+<div class="dialog-container">
+  <div fxLayout="row" fxLayout="start center" class="title-container">
+    <p>PLEASE ENTER YOUR DATE OF BIRTH:</p>
+  </div>
+  <form [formGroup]="ageForm" (ngSubmit)="processAge()" class="age-form">
+    <div class="fields-container" fxLayout="row" fxLayoutAlign="start start">
+      <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
+        <mat-select placeholder="mm" formControlName="month" class="date-field" (selectionChange)=selectMonth($event)>
+          <mat-option *ngFor="let month of months" [value]="month.value">
+            {{month.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'" class="date-field">
+        <mat-select placeholder="dd" formControlName="day" [disabled]="!ageForm.controls.month.valid">
+          <mat-option *ngFor="let day of days" [value]="day.value">
+            {{day.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'" class="date-field">
+        <mat-select placeholder="yyyy" formControlName="year" [disabled]="!ageForm.controls.month.valid || !ageForm.controls.day.valid" (selectionChange)=selectYear($event)>
+          <mat-option *ngFor="let year of years" [value]="year.value">
+            {{year.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button type="submit" id="travel-button" [disabled]="!ageForm.valid" [class.valid-button]="ageForm.valid">
+        LET'S TRAVEL!
+      </button>
+    </div>
+  </form>
+</div>

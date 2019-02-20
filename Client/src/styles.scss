@@ -1,0 +1,138 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@font-face {
+  font-family: 'Helvetica-Neue';
+  src: url('./assets/HelveticaNeue-CondObl.woff');
+}
+
+@font-face {
+  font-family: 'Helvetica-Neue-Bold';
+  src: url('./assets/HelveticaNeueCondensedBold.ttf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffd204;
+}
+
+//--> MATERIAL SELECT OVERRIDES
+.mat-select {
+  margin-top: -5px !important;
+  .mat-select-value {
+    font-family: Helvetica-Neue-Bold !important;
+    color: #492613 !important;
+    font-size: 20px !important;
+  }
+}
+.mat-select-panel {
+  border-radius: 10px;
+  .mat-option {
+    text-align: center !important;
+    color: #4a2510;
+    font-family: Helvetica-Neue-Bold !important;
+    font-size: 20px !important;
+    &:hover {
+      color: #e5c310 !important;
+    }
+  }
+  .mat-active {
+    color: #e5c310 !important;
+  }
+  #mat-option-0 {
+    background: #64b1bb;
+    color: white;
+  }
+  #mat-option-1 {
+    background: #235d39;
+    color: white;
+  }
+  #mat-option-2 {
+    background: #cc8240;
+    color: white;
+  }
+  #mat-option-3 {
+    background: #4a2510;
+    color: white;
+  }
+}
+
+//--> MATERIAL BUTTON & ICON OVERRIDES
+.mat-button-focus-overlay {
+  display: none !important;
+}
+.mat-button-wrapper {
+  font-family: Helvetica-Neue;
+  font-size: 24px !important;
+}
+.mat-icon {
+  height: 55px !important;
+  line-height: 50px !important;
+}
+
+//--> MATERIAL FORM FIELD OVERRIDES
+.mat-form-field-label-wrapper {
+  top: -28px;
+  padding-top: 30px;
+  .mat-form-field-label {
+    font-family: Helvetica-Neue-Bold !important;
+    font-size: 24px !important;
+  }
+}
+.mat-form-field-flex {
+  height: 55px !important;
+  background-color: white;
+  border-radius: 10px;
+}
+.mat-form-field-underline {
+  display: none;
+}
+.mat-form-field-infix {
+  text-align: center;
+}
+
+//--> MATERIAL DIALOG OVERRIDES
+.mat-dialog-container {
+  border-radius: 30px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+}
+
+//--> COMPONENT LEVEL MATERIAL OVERRIDES
+app-home {
+  #vote-field {
+    .mat-form-field-label {
+      color: #492613 !important;
+    }
+  }
+  .mat-select-value {
+    font-family: Helvetica-Neue-Bold !important;
+    color: #492613 !important;
+    font-size: 24px !important;
+  }
+  .mat-form-field-flex {
+    background-color: #e6e7e8 !important;
+  }
+}
+app-age-dialog {
+  .mat-dialog-container {
+    padding: 0 !important;
+  }
+  .mat-form-field-flex {
+    background-color: #e6e7e8 !important;
+  }
+}
+#travel-button {
+  .mat-button-wrapper {
+    font-family: Helvetica-Neue-Bold !important;
+  }
+}
+
+@media screen and (max-width: 895px) {
+  #travel-button {
+    .mat-button-wrapper {
+      font-size: 20px !important;
+    }
+  }
+}

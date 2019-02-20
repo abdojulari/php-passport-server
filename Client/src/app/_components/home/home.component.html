@@ -1,0 +1,49 @@
+<div class="page-container">
+  <!-- HEADER SECTION -->
+  <div fxLayout="row" fxLayoutAlign="space-between end" class="header-container">
+    <div class="logo-container">
+      <img src="./assets/m&m-logo.png">
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center end" class="header-text-container">
+      <p>
+        VOTE & ENTER FROM APRIL 22 - JUNE 24
+      </p>
+    </div>
+  </div>
+  <!-- CONTENT SECTION -->
+  <div fxLayout="row" fxLayoutAlign="start center" class="content-container">
+    <div fxLayout="column" fxLayoutAlign="center center" class="image-container">
+      <img src="./assets/all-in-one.png" class="character-image-desktop">
+      <img src="./assets/all-in-one-mobile.png" class="character-image-mobile">
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" class="text-container">
+      <p class="upper-title">
+        FLAVOUR VOTE 2019
+      </p>
+      <p class="lower-title">
+        LANDING SOON
+      </p>
+      <form class="email-form" [formGroup]="emailForm" (ngSubmit)="register()">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'" id="vote-field">
+            <mat-select placeholder="READY TO VOTE?" formControlName="flavour">
+              <mat-option *ngFor="let flavour of flavours" [value]="flavour.value" fxLayoutAlign="center center">
+                {{flavour.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p class="label-title">
+            ENTER YOUR EMAIL TO RECEIVE CONTEST REMINDERS
+          </p>
+          <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'">
+            <input matInput type="email" formControlName="email" placeholder="email address">
+          </mat-form-field>
+          <button mat-button type="submit" [disabled]="!emailForm.valid" [class.valid-button]="emailForm.valid">
+            SUBMIT
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

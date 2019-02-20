@@ -1,0 +1,237 @@
+.page-container {
+  width: 100%;
+  height: auto;
+  .header-container {
+    width: 100%;
+    height: 75px;
+    .logo-container {
+      width: calc(70% - 40px);
+      height: 75px;
+      border-bottom: 4px dotted #fff;
+      margin-left: 40px;
+      img {
+        position: absolute;
+        width: 163px;
+        left: 25px;
+        top: 46px;
+      }
+    }
+    .header-text-container {
+      height: 75px;
+      width: 30%;
+      border-bottom: 4px dotted #fff;
+      text-align: center;
+      p {
+        color: #492613;
+        font-family: Helvetica-Neue-Bold;
+        font-size: 1.4vw;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .content-container {
+    width: 100%;
+    .image-container {
+      width: 70%;
+      .banner-image-desktop {
+        width: 50%;
+        padding-left: 2.5%;
+      }
+      .character-image-desktop {
+        width: 90%;
+        display: flex;
+      }
+      .character-image-mobile {
+        display: none;
+      }
+    }
+    .text-container {
+      width: 30%;
+      text-align: center;
+      .upper-title {
+        color: #492613;
+        font-family: Helvetica-Neue-Bold;
+        font-weight: 900;
+        font-size: 2.85vw;
+        margin-bottom: 0;
+      }
+      .lower-title {
+        color: #492613;
+        font-family: Helvetica-Neue-Bold;
+        font-weight: 900;
+        font-size: 3.85vw;
+        margin-top: -15px;
+      }
+      .email-form {
+        width: 85%;
+        .label-title {
+          color: #492613;
+          font-family: Helvetica-Neue;
+          font-size: 1.05vw;
+          margin-bottom: 10px;
+        }
+        .mat-form-field {
+          width: 100%;
+        }
+        .mat-button {
+          background: #e6e7e8;
+          color: rgba(0,0,0,.54);
+          width: 35%;
+          min-width: 100px;
+          border-radius: 10px;
+          height: 55px;
+          padding-top: 5px;
+        }
+        .valid-button {
+          background: #492613;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+//--> 1399 SECTION -->
+@media screen and (max-width: 1399px) {
+  .page-container {
+    .header-container {
+      .logo-container {
+        img {
+          width: 132px;
+          top: 50px;
+        }
+      }
+    }
+  }
+}
+
+//--> 1199 SECTION -->
+@media screen and (max-width: 1199px) {
+  .page-container {
+    .header-container {
+      .logo-container {
+        img {
+          width: 110px;
+          top: 55px;
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
+//--> 999 SECTION -->
+@media screen and (max-width: 999px) {
+  .page-container {
+    .header-container {
+      .header-text-container {
+        width: 100%;
+        justify-content: flex-end !important;
+        margin-right: 20px;
+        p {
+          font-size: 2vw;
+        }
+      }
+    }
+    .content-container {
+      flex-direction: column !important;
+      .image-container {
+        width: 100%;
+        min-height: unset;
+      }
+      .text-container {
+        width: 100%;
+        margin-bottom: 10%;
+        .upper-title {
+          font-size: 6.25vw;
+        }
+        .lower-title {
+          font-size: 8.25vw;
+        }
+        .email-form {
+          .label-title {
+            font-size: 2.35vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+//--> 768 SECTION -->
+@media screen and (max-width: 768px) {
+  .character-image-desktop {
+    display: none !important;
+  }
+  .character-image-mobile {
+    display: flex !important;
+    width: 70%;
+  }
+  .page-container {
+    .header-container {
+      .logo-container {
+        width: 0;
+      }
+      .header-text-container {
+        width: 100%;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+    .content-container {
+      .text-container {
+        .email-form {
+          .label-title {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//--> 599 SECTION -->
+@media screen and (max-width: 599px) {
+  .page-container {
+    .content-container {
+      .image-container {
+        margin-top: 5%;
+      }
+      .text-container {
+        .lower-title {
+          margin-top: -5px;
+        }
+      }
+    }
+  }
+}
+
+//--> 499 SECTION -->
+@media screen and (max-width: 499px) {
+  .page-container {
+    .header-container {
+      .header-text-container {
+        align-items: flex-start !important;
+        p {
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+//--> 399 SECTION -->
+@media screen and (max-width: 399px) {
+  .page-container {
+    .header-container {
+      .header-text-container {
+        p {
+          font-size: 14px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
