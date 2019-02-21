@@ -16,6 +16,8 @@ import { MaterialComponentsModule } from './material-components.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ConfirmationDialogComponent } from './_components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { NocontestComponent } from './_components/nocontest/nocontest.component';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { NocontestComponent } from './_components/nocontest/nocontest.component'
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MaterialComponentsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    Angulartics2Module.forRoot(),
   ],
   providers: [
     AuthGuard,

@@ -26,7 +26,7 @@
       <form class="email-form" [formGroup]="emailForm" (ngSubmit)="register()">
         <div fxLayout="column" fxLayoutAlign="center center">
           <mat-form-field [hideRequiredMarker]="true" [floatLabel]="'never'" id="vote-field">
-            <mat-select placeholder="READY TO VOTE?" formControlName="flavour">
+            <mat-select placeholder="READY TO VOTE?" formControlName="flavour" (selectionChange)="selectFlavour($event)">
               <mat-option *ngFor="let flavour of flavours" [value]="flavour.value" fxLayoutAlign="center center">
                 {{flavour.viewValue}}
               </mat-option>

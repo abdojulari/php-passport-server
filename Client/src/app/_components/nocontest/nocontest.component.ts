@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import 'hammerjs';
+import { Angulartics2 } from 'angulartics2';
 
 @Component({
   selector: 'app-nocontest',
@@ -9,12 +10,17 @@ import 'hammerjs';
 
 export class NocontestComponent implements OnInit, OnDestroy {
 
-  constructor() {
+  constructor(public angulartics2: Angulartics2) {
 
   }
 
   ngOnInit() {
-
+    if (this.angulartics2) {
+      this.angulartics2.eventTrack.next({
+        action: 'page-view-not-eligible'
+      });
+      // console.log(this.angulartics2);
+    }
   }
 
   ngOnDestroy() {
