@@ -39,4 +39,4 @@ Quick start for Laravel 5.6 + Angular 6.0 projects with JWT auth.
 
 ![Screenshot](./img1.jpg)
 
-## License: [MIT](https://opensource.org/licenses/MIT)
+## License: [MIT](https://opensource.org/licenses/MIT)# flavour_vote
