@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   baseUrl: window.location.origin, // Base URL here
-  apiUrl: 'http://boilerplate/api' //your local API URL here
+  apiUrl: 'http://localhost:4200/' //your local API URL here
   //... more of your variables
 };

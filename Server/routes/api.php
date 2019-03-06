@@ -12,11 +12,33 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::middleware('api')->post('/register' , 'APIControllers\AuthController@register');
-Route::middleware('api')->post('/login' , 'APIControllers\AuthController@login');
-Route::middleware('api')->post('/password-reset-email' , 'APIControllers\AuthController@passwordResetEmail');
-Route::middleware('api')->post('/reset-password' , 'APIControllers\AuthController@resetPassword');
 
-Route::group(['middleware' => ['auth:api']], function () {
-    //Route::any('/your_route', 'APIControllers\YourController@index');
+
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signup');
+
+    Route::group([
+      'middleware' => 'auth:api'
+    ], function() {
+        Route::get('logout', 'AuthController@logout');
+        Route::get('user', 'AuthController@user');
+        Route::resource('vote', 'VoteController');
+    });
+});
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::get('search/{id}', 'VoteController@search');
+});
+Route::group([
+    'namespace' => 'Auth',
+    'middleware' => 'api',
+    'prefix' => 'password'
+], function () {
+    Route::post('create', 'PasswordResetController@create');
+    Route::get('find/{token}', 'PasswordResetController@find');
+    Route::post('reset', 'PasswordResetController@reset');
 });
